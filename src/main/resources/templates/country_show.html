@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Country</title>
+</head>
+<body>
+    <a href="/cities/new"> Add new City</a> <br/>
+
+    Name: <span th:inline="text">[[ ${country.name} ]]</span> <br/>
+    Country Code: <span th:inline="text">[[ ${country.code} ]]</span> <br/>
+</body>
+</html>
