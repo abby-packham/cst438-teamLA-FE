@@ -14,13 +14,16 @@ public class User {
     private String firstName;
     private String lastName;
     private String userId;
+    private String password;
     
-    public User(long id, String firstName, String lastName, String userId) {
+
+    public User(long id, String firstName, String lastName, String userId, String password) {
         super();
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userId = userId;
+        this.password = password;
     }
     
     
@@ -33,6 +36,16 @@ public class User {
         return id;
     }
 
+
+    public String getPassword() {
+        return password;
+    }
+
+
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
 
     public void setId(long id) {

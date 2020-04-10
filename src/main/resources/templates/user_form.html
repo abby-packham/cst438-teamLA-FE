@@ -17,6 +17,8 @@
         <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"> </span>  <br/>
     User Id: <input type="text" th:field="*{userId}" /> <br/>
         <span th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}"> </span>  <br/>
+    Password: <input type="password" th:field="*{password}" /> <br/>
+        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"> </span>  <br/>
         <input type="submit" value="Submit" />
     </form>
     
