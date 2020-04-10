@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{fragments/main_layout}">
 <head>
 <meta charset="UTF-8">
     <title>User form</title>
 </head>
 <body>
+    
+    <div layout:fragment="content" class="container">
+
     <h2>Create User</h2>
+    
     <form action="#" th:action="@{/users/new}" th:object="${user}" method = "post">
     First Name: <input type="text" th:field="*{firstName}" /> <br/>
         <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"> </span>  <br/>
@@ -15,5 +19,8 @@
         <span th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}"> </span>  <br/>
         <input type="submit" value="Submit" />
     </form>
+    
+    </div>
+        
 </body>
 </html>

@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{fragments/main_layout}">
 <head>
 <meta charset="UTF-8">
 <title>User</title>
 </head>
 <body>
+
+    <div layout:fragment="content" class="container">
+
     User ID: <span th:inline="text">[[ ${user.id} ]]</span> <br/>
     First Name: <span th:inline="text">[[ ${user.firstName} ]]</span> <br/>
     Last Name: <span th:inline="text">[[ ${user.lastName} ]]</span> <br/>
     User ID: <span th:inline="text">[[ ${user.userId} ]]</span> <br/>
+
+    </div>
+    
 </body>
 </html>

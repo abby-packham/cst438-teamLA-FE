@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{fragments/main_layout}">
 <head>
-<meta charset="UTF-8">
     <title>Team LA Flight Reservation System</title>
 </head>
 <body>
     <h2>Team LA Flight Reservation System</h2>
 
+<div layout:fragment="content" class="container">
+
+    <div class="jumbotron">
+        <h1>Flight Reservation System</h1>
+        <p>Please create a user first.</p>
+        <p>
+            <a class="btn btn-lg btn-primary" href="/users/new" role="button">Create a new User. &raquo;</a>
+        </p>
+    </div>
+</div>
 
 </body>
 </html>

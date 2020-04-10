@@ -18,11 +18,6 @@ public class MyAccountController {
     @Autowired
     UserRepository userRepository;
 
-    @GetMapping("/")
-    public String index( Model model) {
-        return "index";
-    }
-
     @GetMapping("/users/new")
     public String createUser( Model model) {
         User user = new User();
