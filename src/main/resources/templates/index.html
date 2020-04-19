@@ -17,6 +17,7 @@
         </th:block>
         <th:block th:unless="${userid}">
 	        <p>Please create a user first or Sign in.</p>
+	        <p>[[ ${signin_status} ]]</p>
             <p>
                 <a class="btn btn-lg btn-primary" href="/users/new" role="button">Create a new User. &raquo;</a>
                 <a class="btn btn-lg btn-primary" href="/users/signin" role="button">Sign in. &raquo;</a>
