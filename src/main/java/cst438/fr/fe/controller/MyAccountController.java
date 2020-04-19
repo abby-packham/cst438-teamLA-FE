@@ -1,5 +1,7 @@
 package cst438.fr.fe.controller;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +28,18 @@ public class MyAccountController {
     }
 
     @PostMapping("/users/new")
-    public String processUserForm(@Valid User country, BindingResult result, Model model) {
+    public String processUserForm(@Valid User user, BindingResult result, Model model, HttpServletResponse response) {
         if (result.hasErrors()) {
             return "user_form";
         } 
 
-        userRepository.save(country);
+        userRepository.save(user);
+        
+        //success
+        //save cookie
+        Cookie cookie = new Cookie("userid", user.getUserId());
+        cookie.setPath("/");
+        response.addCookie(cookie);
         return "user_show";
     }
     
