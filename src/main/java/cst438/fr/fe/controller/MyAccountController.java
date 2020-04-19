@@ -49,9 +49,15 @@ public class MyAccountController {
             if (existingUser.getPassword().equalsIgnoreCase(user.getPassword())) {
                 Utils.setUserCookie(userID, response);
                 model.addAttribute(Utils.COOKIE_USER_ID, userID);
+            } else {
+                //invalid password
+                model.addAttribute("signin_status", "Invalid Password.");
             }
+        } else {
+            //User not found
+            model.addAttribute("signin_status", "User not found.");
         }
-        return "index";
+        return "index"; 
     }
     
     @GetMapping("/users/new")
