@@ -5,10 +5,12 @@
 
 <!-- https://o7planning.org/en/12351/thymeleaf-conditional-statements-if-unless-switch -->
 		<th:block th:if="${userid}">
-		   <a href="/users/mycount">Welcome [[ ${userid} ]]</a> | 
+		   <a href="/users/new">Welcome [[ ${userid} ]]</a> | 
+           <a href="/users/signout">Sign out</a> |
 		</th:block>
 		<th:block th:unless="${userid}">
-	        <a href="/users/new">Create User</a> | 
+            <a href="/users/new">Create User</a> | 
+            <a href="/users/signin">Sign in</a> | 
 		</th:block>
 
 		<a href="/flight/reserve">Reserve Flight</a> | 
