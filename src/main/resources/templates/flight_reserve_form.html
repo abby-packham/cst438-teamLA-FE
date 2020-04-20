@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{fragments/main_layout}">
+<head>
+<meta charset="UTF-8">
+    <title>Fight Reservation form</title>
+</head>
+<body>
+    
+    <div layout:fragment="content" class="container">
+	    
+	    <form action="#" th:action="@{/flight/reserve}" th:object="${flight}" method = "post">
+	    Depart: <input type="text" th:field="*{departureCity}" /> 
+	    Arrive: <input type="text" th:field="*{arrivalCity}" /> 
+	    Depart Date: <input type="text" th:field="*{dateOfDeparture}" /> 
+	    Return Date: <input type="password" th:field="*{dateOfArrival}" />
+	        <input type="submit" value="Search" />
+	    </form>
+    
+    
+    </div>
+        
+</body>
+</html>
