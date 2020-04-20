@@ -1,7 +1,5 @@
 package cst438.fr.fe.controller;
 
-import java.util.Date;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -14,7 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import cst438.fr.fe.Utils;
 import cst438.fr.fe.domain.Flight;
+import cst438.fr.fe.domain.FlightInfo;
 import cst438.fr.fe.domain.FlightRepository;
+import cst438.fr.fe.service.FlightListService;
 
 @Controller
 public class FlightController {
@@ -22,9 +22,13 @@ public class FlightController {
     @Autowired
     FlightRepository flightRepository;
 
+    
+    @Autowired
+    FlightListService flightListService;
+    
     @GetMapping("/flight/reserve")
     public String flightReserve( Model model, HttpServletRequest request, HttpServletResponse response) {
-        String userID = Utils.getCookieValue(request, Utils.COOKIE_USER_ID);
+        Utils.setUserIDModel(request, model);
         Flight flight = new Flight();
         model.addAttribute("flight", flight);
 
@@ -52,5 +56,12 @@ public class FlightController {
     }
     
 
+    @GetMapping("/flight/list")
+    public String listFlights( Model model, HttpServletRequest request, HttpServletResponse response) {
+        Utils.setUserIDModel(request, model);
+        FlightInfo flightList = flightListService.getFlightList();
+        model.addAttribute("flightList", flightList.getFlights());
+        return "flight_list";
+    }
     
 }

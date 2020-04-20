@@ -4,6 +4,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.ui.Model;
+
 public class Utils {
 
     public static final String COOKIE_USER_ID = "userid";
@@ -36,6 +38,13 @@ public class Utils {
         cookie.setPath("/");
         cookie.setMaxAge(0);
         response.addCookie(cookie);
+    }
+    
+    public static void setUserIDModel(HttpServletRequest request, Model model) {
+        String userID = Utils.getCookieValue(request, Utils.COOKIE_USER_ID);
+        if (userID != null) {
+            model.addAttribute(Utils.COOKIE_USER_ID, userID);
+        }
     }
     
 }
