@@ -1,4 +1,4 @@
-package cst438.fr.fe;
+package cst438.fr.fe.domain;
 
 import java.sql.Timestamp;
 import java.util.Date;
