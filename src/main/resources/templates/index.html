@@ -10,10 +10,20 @@
 
     <div class="jumbotron">
         <h1>Flight Reservation System</h1>
-        <p>Please create a user first.</p>
-        <p>
-            <a class="btn btn-lg btn-primary" href="/users/new" role="button">Create a new User. &raquo;</a>
-        </p>
+        
+        <th:block th:if="${userid}">
+           <a href="/users/new">Welcome [[ ${userid} ]]</a> | 
+           <a href="/users/signout">Sign out</a>
+        </th:block>
+        <th:block th:unless="${userid}">
+	        <p>Please create a user first or Sign in.</p>
+	        <p>[[ ${signin_status} ]]</p>
+            <p>
+                <a class="btn btn-lg btn-primary" href="/users/new" role="button">Create a new User. &raquo;</a>
+                <a class="btn btn-lg btn-primary" href="/users/signin" role="button">Sign in. &raquo;</a>
+            </p>
+        </th:block>
+        
     </div>
 </div>
 

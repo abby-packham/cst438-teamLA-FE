@@ -7,20 +7,30 @@
 <body>
     
     <div layout:fragment="content" class="container">
-
-    <h2>Create User</h2>
+	    <th:block th:if="${userid}">
+	        <h2>Update User</h2>
+	    </th:block>
+	    <th:block th:unless="${userid}">
+	        <h2>Create User</h2>
+	    </th:block>
+	    
+	    <form action="#" th:action="@{/users/new}" th:object="${user}" method = "post">
+	    First Name: <input type="text" th:field="*{firstName}" /> <br/>
+	        <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"> </span>  <br/>
+	    Last Name: <input type="text" th:field="*{lastName}" /> <br/>
+	        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"> </span>  <br/>
+	    User Id: <input type="text" th:field="*{userId}" /> <br/>
+	        <span th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}"> </span>  <br/>
+	    Password: <input type="password" th:field="*{password}" /> <br/>
+	        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"> </span>  <br/>
+	        <input type="submit" value="Submit" />
+	    </form>
     
-    <form action="#" th:action="@{/users/new}" th:object="${user}" method = "post">
-    First Name: <input type="text" th:field="*{firstName}" /> <br/>
-        <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"> </span>  <br/>
-    Last Name: <input type="text" th:field="*{lastName}" /> <br/>
-        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"> </span>  <br/>
-    User Id: <input type="text" th:field="*{userId}" /> <br/>
-        <span th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}"> </span>  <br/>
-    Password: <input type="password" th:field="*{password}" /> <br/>
-        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"> </span>  <br/>
-        <input type="submit" value="Submit" />
-    </form>
+       <th:block th:if="${userid}">
+            <h2>User's Flight Information</h2>
+            <!-- TODO: -->
+       </th:block>
+    
     
     </div>
         

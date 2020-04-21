@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{fragments/main_layout}">
+<head>
+<meta charset="UTF-8">
+    <title>User Sign In form</title>
+</head>
+<body>
+    
+    <div layout:fragment="content" class="container">
+
+    <h2>Sign In</h2>
+    
+    <form action="#" th:action="@{/users/signin}" th:object="${user}" method = "post">
+    User Id: <input type="text" th:field="*{userId}" /> <br/>
+        <span th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}"> </span>  <br/>
+    Password: <input type="password" th:field="*{password}" /> <br/>
+        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"> </span>  <br/>
+        <input type="submit" value="Submit" />
+    </form>
+    
+    </div>
+        
+</body>
+</html>
