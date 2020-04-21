@@ -1,14 +1,51 @@
 package cst438.fr.fe.domain;
-
-import java.sql.Timestamp;
 import java.util.Date;
-import java.util.Optional;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.security.Timestamp;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
+
+@SpringBootTest
 public class FlightTest {
+	 @Test
+	    public void testFlight() throws Exception {
+	        String flightNumber = "FL309";
+	        String operatingAirlines = "United";
+	        String departureCity = "Los Angeles";
+	        String arrivalCity = "Seattle";
+	        @SuppressWarnings("deprecation")
+			Date dateOfDeparture = new Date(2020, 10, 12);
+	        Timestamp estimatedDepartureTime = (2020-10-12 11:15:00);
+	        Flight flight = new Flight();
+	        flight.setFlightNumber(flightNumber);
+	        flight.setOperatingAirlines(operatingAirlines);
+	        flight.setDepartureCity(departureCity);
+	        flight.setArrivalCity(arrivalCity);
+	        flight.setDateOfDeparture(dateOfDeparture);
+	        flight.setEstimatedDepartureTime(estimatedDepartureTime);
+	        
+	        assertThat(flight.getFlightNumber()).isEqualTo(flightNumber);
+	        assertThat(flight.getOperatingAirlines()).isEqualTo(operatingAirlines);
+	        assertThat(flight.getDepartureCity()).isEqualTo(departureCity);
+	        assertThat(flight.getArrivalCity()).isEqualTo(arrivalCity);
+	        assertThat(flight.getDateOfDeparture()).isEqualTo(dateOfDeparture);
+	        assertThat(flight.getEstimatedDepartureTime()).isEqualTo(estimatedDepartureTime);
+	    }
+	 
+	 @Test
+	    public void testFlightConstructor() throws Exception {
+		 	String flightNumber = "FL309";
+	        String operatingAirlines = "United";
+	        String departureCity = "Los Angeles";
+	        String arrivalCity = "Seattle";
+			@SuppressWarnings("deprecation")
+			Date dateOfDeparture = new Date(2020, 10, 12);
+			Flight flight = new Flight(flightNumber, operatingAirlines, departureCity, arrivalCity, dateOfDeparture);
+		 
+	 }
 
 }
