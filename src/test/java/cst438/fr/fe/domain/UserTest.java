@@ -28,5 +28,21 @@ public class UserTest {
         assertThat(user.getUserId()).isEqualTo(userId);
         assertThat(user.getId()).isEqualTo(id);
     }
+    
+    @Test
+    public void testUserConstructor() throws Exception {
+        String firstName = "Charlie";
+        long id = 123;
+        String lastName = "Kim";
+        String password = "test";
+        String userId = "testID";
+        User user = new User(id, firstName, lastName, userId, password);
+        assertThat(user.getFirstName()).isEqualTo(firstName);
+        assertThat(user.getLastName()).isEqualTo(lastName);
+        assertThat(user.getPassword()).isEqualTo(password);
+        assertThat(user.getUserId()).isEqualTo(userId);
+        assertThat(user.getId()).isEqualTo(id);
+
+    }
 
 }
