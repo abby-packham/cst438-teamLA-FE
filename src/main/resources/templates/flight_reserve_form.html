@@ -10,9 +10,14 @@
 	    
 	    <form action="#" th:action="@{/flight/reserve}" th:object="${flight}" method = "post">
 	    Depart: <input type="text" th:field="*{departureCity}" /> 
+	            <span th:if="${#fields.hasErrors('departureCity')}" th:errors="*{departureCity}"> </span> 
+	    
 	    Arrive: <input type="text" th:field="*{arrivalCity}" /> 
+                <span th:if="${#fields.hasErrors('arrivalCity')}" th:errors="*{arrivalCity}"> </span>
 	    Depart Date: <input type="text" th:field="*{dateOfDeparture}" /> 
+                <span th:if="${#fields.hasErrors('dateOfDeparture')}" th:errors="*{dateOfDeparture}"> </span> 
 	    Return Date: <input type="text" th:field="*{dateOfArrival}" />
+                <span th:if="${#fields.hasErrors('dateOfArrival')}" th:errors="*{dateOfArrival}"> </span>  
 	        <input type="submit" value="Search" />
 	    </form>
     
