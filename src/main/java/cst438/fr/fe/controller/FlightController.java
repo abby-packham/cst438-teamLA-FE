@@ -15,6 +15,7 @@ import cst438.fr.fe.domain.Flight;
 import cst438.fr.fe.domain.FlightInfo;
 import cst438.fr.fe.domain.FlightRepository;
 import cst438.fr.fe.service.FlightListService;
+import cst438.fr.fe.service.FlightReserveService;
 
 @Controller
 public class FlightController {
@@ -26,6 +27,10 @@ public class FlightController {
     @Autowired
     FlightListService flightListService;
     
+    @Autowired
+    FlightReserveService flightReserveService;
+
+
     @GetMapping("/flight/reserve")
     public String flightReserve( Model model, HttpServletRequest request, HttpServletResponse response) {
         Utils.setUserIDModel(request, model);
@@ -39,20 +44,9 @@ public class FlightController {
     public String processFlightReservation(@Valid Flight flight, Model model, HttpServletRequest request, HttpServletResponse response) {
         //check if user already exists from database.
         String flightNumber = flight.getFlightNumber();
-        Flight existingUser = flightRepository.findByFlightNumber(flightNumber);
-        if (existingUser != null) {
-//            if (existingUser.getPassword().equalsIgnoreCase(user.getPassword())) {
-//                Utils.setUserCookie(userID, response);
-//                model.addAttribute(Utils.COOKIE_USER_ID, userID);
-//            } else {
-//                //invalid password
-//                model.addAttribute("signin_status", "Invalid Password.");
-//            }
-        } else {
-            //User not found
-            model.addAttribute("signin_status", "User not found.");
-        }
-        return "index"; 
+        Flight foundFlight = flightRepository.findByFlightNumber(flightNumber);
+        flightReserveService.requestReservation("", "", "");
+        return "flight_reserve_show"; 
     }
     
 
