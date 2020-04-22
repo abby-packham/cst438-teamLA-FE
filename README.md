@@ -38,6 +38,21 @@ Start rabbitmq_server and st438-teamLA-BE2 first.
 
 Then, start cst438-teamLA-BE1 and cst438-teamLA-FE as FE requires both backend services.
 
-![alt text](https://raw.githubusercontent.com/charlesk40/cst438-teamLA-FE/master/cst438-teamLA-FE-main.png)
+### Examples
+
+![alt text](https://raw.githubusercontent.com/charlesk40/cst438-teamLA-FE/master/cst438-teamLA-FE-index.png)
+
+![alt text](https://raw.githubusercontent.com/charlesk40/cst438-teamLA-FE/master/cst438-teamLA-FE-user-create.png)
+
+![alt text](https://raw.githubusercontent.com/charlesk40/cst438-teamLA-FE/master/cst438-teamLA-FE-user-create-show.png)
+
+![alt text](https://raw.githubusercontent.com/charlesk40/cst438-teamLA-FE/master/cst438-teamLA-FE-user-update.png)
+
+![alt text](https://raw.githubusercontent.com/charlesk40/cst438-teamLA-FE/master/cst438-teamLA-FE-flight-reserve.png)
+
+![alt text](https://raw.githubusercontent.com/charlesk40/cst438-teamLA-FE/master/cst438-teamLA-FE-flight-list.png)
+
+
+
 
 
