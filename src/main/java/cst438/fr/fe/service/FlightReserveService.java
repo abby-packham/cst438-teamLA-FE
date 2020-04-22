@@ -1,5 +1,7 @@
 package cst438.fr.fe.service;
 
+import java.util.Date;
+
 import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +20,12 @@ public class FlightReserveService {
 	    
 	}
 	
-    public void requestReservation(String cityName, String level, String email) {
-        String msg  = "{\"cityName\": \""+ cityName + 
-                "\" \"level\": \""+level+
-                "\" \"email\": \""+email+"\"}" ;
+    public void requestReservation(String departureCity, String arrivalCity, Date dateOfDeparture,
+            Date dateOfArrival) {
+        String msg  = "{\"departureCity\": \""+ departureCity + 
+                "\" \"arrivalCity\": \""+arrivalCity+
+                "\" \"dateOfDeparture\": \""+dateOfDeparture+
+                "\" \"dateOfArrival\": \""+dateOfArrival+"\"}" ;
         
         System.out.println("Sending message:"+msg);
         

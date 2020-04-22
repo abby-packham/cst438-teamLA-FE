@@ -45,7 +45,8 @@ public class FlightController {
         //check if user already exists from database.
         String flightNumber = flight.getFlightNumber();
         Flight foundFlight = flightRepository.findByFlightNumber(flightNumber);
-        flightReserveService.requestReservation("", "", "");
+        flightReserveService.requestReservation(flight.getDepartureCity(), flight.getArrivalCity(),
+                flight.getDateOfDeparture(), flight.getDateOfArrival());
         return "flight_reserve_show"; 
     }
     
