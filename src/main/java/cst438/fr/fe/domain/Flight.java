@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="flight")
@@ -18,10 +19,19 @@ public class Flight {
     
 	private String flightNumber;
     private String operatingAirlines;
+    
+    @NotNull
     private String departureCity;
+    
+    @NotNull
     private String arrivalCity;
+    
+    @NotNull
     private Date dateOfDeparture;
+    
+    @NotNull
     private Date dateOfArrival;
+    
     private Timestamp estimatedDepartureTime;
 
     public Flight() {

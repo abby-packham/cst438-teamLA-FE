@@ -19,21 +19,18 @@ public class FlightTest {
 	        String arrivalCity = "Seattle";
 	        @SuppressWarnings("deprecation")
 			Date dateOfDeparture = new Date(2020, 10, 12);
-	        Timestamp estimatedDepartureTime = (2020-10-12 11:15:00);
 	        Flight flight = new Flight();
 	        flight.setFlightNumber(flightNumber);
 	        flight.setOperatingAirlines(operatingAirlines);
 	        flight.setDepartureCity(departureCity);
 	        flight.setArrivalCity(arrivalCity);
 	        flight.setDateOfDeparture(dateOfDeparture);
-	        flight.setEstimatedDepartureTime(estimatedDepartureTime);
 	        
 	        assertThat(flight.getFlightNumber()).isEqualTo(flightNumber);
 	        assertThat(flight.getOperatingAirlines()).isEqualTo(operatingAirlines);
 	        assertThat(flight.getDepartureCity()).isEqualTo(departureCity);
 	        assertThat(flight.getArrivalCity()).isEqualTo(arrivalCity);
 	        assertThat(flight.getDateOfDeparture()).isEqualTo(dateOfDeparture);
-	        assertThat(flight.getEstimatedDepartureTime()).isEqualTo(estimatedDepartureTime);
 	    }
 	 
 	 @Test
@@ -44,7 +41,7 @@ public class FlightTest {
 	        String arrivalCity = "Seattle";
 			@SuppressWarnings("deprecation")
 			Date dateOfDeparture = new Date(2020, 10, 12);
-			Flight flight = new Flight(flightNumber, operatingAirlines, departureCity, arrivalCity, dateOfDeparture);
+			Flight flight = new Flight(flightNumber, operatingAirlines, departureCity, arrivalCity, dateOfDeparture, dateOfDeparture, null);
 		 
 	 }
 
