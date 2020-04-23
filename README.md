@@ -32,6 +32,13 @@ Start rabbitmq_server
 rabbitmq_server-3.8.3/sbin/rabbitmq-server 
 ```
 
+Create these schemas in MySql:
+flightreservation
+flights
+flights-reserve
+
+**Make sure you update the root password on all 3 application properties pages**
+
 ## Running 
 
 Start rabbitmq_server and st438-teamLA-BE2 first.
